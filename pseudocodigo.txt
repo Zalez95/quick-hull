@@ -1,0 +1,35 @@
+EnvolventeConvexa ← {}			// Variable Global
+
+FUNCTION quickHull(V): EnvolventeConvexa
+	Entrada:
+		V: conjunto de vertices {v1, v2 ... vn}
+	Salida:
+		Envolvente Convexa de V
+	BEGIN
+		A ← puntoMasIzquierda(V)	// Minimo de los Vértices en el Eje X
+		B ← puntoMasDerecha(V)		// Maximo de los Vértices en el Eje X
+
+		EnvolventeConvexa.añadir(A)
+		subHull(A, B, S1)
+		EnvolventeConvexa.añadir(B)
+		subHull(B, A, S2)
+
+		RETURN EnvolventeConvexa
+	END
+
+FUNCTION subHull(A, B, S)
+	Entrada:
+		A: primer punto del segmento AB
+		B: segundo punto del segmento AB
+		S: conjunto de vertices {v1, v2 ... vn}
+	BEGIN:
+		IF(!vacio(S)) THEN
+			C ← puntoMasLejano(A, B, S)
+			S1 ← puntosALaDerecha(A, C, S)
+			S2 ← puntosALaDerecha(C, B, S)
+
+			EnvolventeConvexa.añadir(subHull(A, C, S1))
+			EnvolventeConvexa.añadir(C)
+			EnvolventeConvexa.añadir(subHull(C, B, S2))
+		ENDIF
+	END
