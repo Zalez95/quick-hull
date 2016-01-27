@@ -1,4 +1,4 @@
-﻿Algoritmo Quick Hull en Python
+﻿# Algoritmo Quick Hull en Python
 
 Visualización con Blender:
 
@@ -23,5 +23,7 @@ Visualización con matplotlib:
 	https://www.matplotlib.org/
 
 	Despues de instalar solo hay que ejecutar "quickHull_matplotlib.py"
+
+# Autor
 
 Daniel González Alonso.
