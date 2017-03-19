@@ -1,4 +1,4 @@
-﻿# Algoritmo Quick Hull en Python
+# Algoritmo Quick Hull en Python
 
 Visualización con Blender:
 
